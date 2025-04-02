@@ -1,5 +1,6 @@
 #!/bin/bash 
 
+#Creating a menu interface 
 echo "Menu
 1) Check Network Interface Information
 2) Ping a Host
@@ -8,11 +9,12 @@ echo "Menu
 5) Traceroute to Host
 6) Exit"
 
+#Request prompt from the user by selecting one option from the menu
 echo "Select the option from the Menu"
 read option 
 echo "Executing $option"
 
-
+#Create a script using if statements to check the network interface information 
 if [ $option -eq 1 ]; then
 ip a
 else
@@ -20,7 +22,7 @@ echo "Menu 1:Locked";
 
 fi 
 
-
+#Repeat the process but this time to ping a host 
 if [ $option -eq 2 ]; then
 echo "What host you want to ping?"
 read host
@@ -30,6 +32,7 @@ echo "Menu 2:Locked"
 
 fi
 
+#Use if and case statements for the nmap to work to it's full potential. 
 if [ "$option" -eq 3 ]; then
     echo "What host do you want to scan?"
     read host
@@ -64,6 +67,7 @@ else
     echo "Menu 3: Locked"
 fi
 
+#Create a script to display the routing table  
 if [ $option -eq 4 ]; then 
 ip route 
 else 
@@ -71,6 +75,7 @@ echo "Menu 4:Locked"
 
 fi
 
+#Create a script to traceroute a specific host
 if [ $option -eq 5 ]; then
 echo "Enter host to traceroute to"
 read host 
@@ -80,6 +85,7 @@ echo "Menu5:Locked"
 
 fi
 
+#Create a script to exit from the menu
 if [ $option -eq 6 ]; then
 echo "Exiting..." 
 exit 0 
